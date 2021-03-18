@@ -1,0 +1,18 @@
+Price: 264,99
+MotherBoard: Lenovo_Unknown
+CPU: IntelCore_I3_6100
+GPU: GTX1050
+Drives: 
+	Count: 1
+	WD_Blue
+Power Supply: PowerSupply_Germany550
+
+Price: 1194,95
+MotherBoard: Aorus_X590
+CPU: Ryzen5_5600X
+GPU: GTX1660
+Drives: 
+	Count: 1
+	Samsung_EVO970
+Power Supply: PowerSupply_Polish950
+
