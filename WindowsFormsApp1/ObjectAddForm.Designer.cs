@@ -38,6 +38,11 @@
             this.CB_Drives = new System.Windows.Forms.ComboBox();
             this.CB_PowerSupply = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TB_ObjectContext
@@ -76,7 +81,7 @@
             // CB_CPU
             // 
             this.CB_CPU.FormattingEnabled = true;
-            this.CB_CPU.Location = new System.Drawing.Point(312, 12);
+            this.CB_CPU.Location = new System.Drawing.Point(312, 39);
             this.CB_CPU.Name = "CB_CPU";
             this.CB_CPU.Size = new System.Drawing.Size(210, 21);
             this.CB_CPU.TabIndex = 4;
@@ -85,7 +90,7 @@
             // CB_GPU
             // 
             this.CB_GPU.FormattingEnabled = true;
-            this.CB_GPU.Location = new System.Drawing.Point(312, 39);
+            this.CB_GPU.Location = new System.Drawing.Point(312, 66);
             this.CB_GPU.Name = "CB_GPU";
             this.CB_GPU.Size = new System.Drawing.Size(210, 21);
             this.CB_GPU.TabIndex = 5;
@@ -94,7 +99,7 @@
             // CB_Motherboard
             // 
             this.CB_Motherboard.FormattingEnabled = true;
-            this.CB_Motherboard.Location = new System.Drawing.Point(312, 66);
+            this.CB_Motherboard.Location = new System.Drawing.Point(312, 12);
             this.CB_Motherboard.Name = "CB_Motherboard";
             this.CB_Motherboard.Size = new System.Drawing.Size(210, 21);
             this.CB_Motherboard.TabIndex = 6;
@@ -124,11 +129,61 @@
             this.timer1.Interval = 250;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(528, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 23);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "CPU";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(529, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 23);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "GPU";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(529, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(156, 23);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Motherboard";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(529, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(156, 23);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Drive";
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(529, 114);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(156, 23);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Power source";
+            // 
             // ObjectAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 151);
+            this.ClientSize = new System.Drawing.Size(697, 151);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.CB_PowerSupply);
             this.Controls.Add(this.CB_Drives);
             this.Controls.Add(this.CB_Motherboard);
@@ -154,5 +209,10 @@
         private System.Windows.Forms.ComboBox CB_Drives;
         private System.Windows.Forms.ComboBox CB_PowerSupply;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

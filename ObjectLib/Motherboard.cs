@@ -12,7 +12,44 @@ namespace ObjectLib
     }
     public class Lenovo_Unknown : IMotherboard
     {
-        public ICPU CPU { get; set; } //CentralProcessingUnit
+        private ICPU cpu; //CentralProcessingUnit
+        public ICPU CPU
+        {
+            set
+            {
+                if (value != null && CompatibleCPUs.Length > 0)
+                {
+                    bool isCompatible = false;
+                    foreach (Type type in CompatibleCPUs)
+                    {
+                        if (type == value.GetType())
+                        {
+                            isCompatible = true;
+                            break;
+                        }
+                    }
+                    if (isCompatible)
+                    {
+                        this.cpu = value;
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("CPU " + value.Name
+                            + " isn`t compatible with " + this.Socket
+                            + " motherboard socket. Cpu set`s by default");
+                        this.cpu = new IntelCore_I3_6100();
+                    }
+                }
+                else
+                {
+                    this.cpu = new IntelCore_I3_6100();
+                }
+            }
+            get
+            {
+                return this.cpu;
+            }
+        }
         public IGPU GPU { get; set; } //GraphicProcessingUnit
         public Sockets Socket { get; private set; }
         public Type[] CompatibleCPUs { get; private set; }
@@ -26,32 +63,7 @@ namespace ObjectLib
                 new IntelCore_I3_6100().GetType()
             };
 
-            //CPU Compatible check
-            if (CPU != null)
-            {
-                bool isCompatible = false;
-                foreach (Type type in CompatibleCPUs)
-                {
-                    if (type == CPU.GetType())
-                    {
-                        isCompatible = true;
-                        break;
-                    }
-                }
-                if (isCompatible)
-                {
-                    this.CPU = CPU;
-                }
-                else
-                {
-                    System.Windows.Forms.MessageBox.Show("CPU " + CPU.Name + " isn`t compatible with " + this.Socket + " motherboard socket. Cpu set`s by default to " + CompatibleCPUs[0].Name);
-                    this.CPU = new IntelCore_I3_6100();
-                }
-            }
-            else
-            {
-                this.CPU = new IntelCore_I3_6100();
-            }
+            this.CPU = CPU;
 
             if (GPU != null)
                 this.GPU = GPU;
@@ -65,7 +77,42 @@ namespace ObjectLib
     }
     public class Aorus_X590 : IMotherboard
     {
-        public ICPU CPU { get; set; } //CentralProcessingUnit
+        private ICPU cpu; //CentralProcessingUnit
+        public ICPU CPU
+        {
+            set
+            {
+                if (value != null && CompatibleCPUs.Length > 0)
+                {
+                    bool isCompatible = false;
+                    foreach (Type type in CompatibleCPUs)
+                    {
+                        if (type == value.GetType())
+                        {
+                            isCompatible = true;
+                            break;
+                        }
+                    }
+                    if (isCompatible)
+                    {
+                        this.cpu = value;
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("CPU " + value.Name + " isn`t compatible with " + this.Socket + " motherboard socket. Cpu set`s by default");
+                        this.cpu = new Ryzen5_5600X();
+                    }
+                }
+                else
+                {
+                    this.cpu = new Ryzen5_5600X();
+                }
+            }
+            get
+            {
+                return this.cpu;
+            }
+        }
         public IGPU GPU { get; set; } //GraphicProcessingUnit
         public Sockets Socket { get; private set; }
         public Type[] CompatibleCPUs { get; private set; }
@@ -78,33 +125,8 @@ namespace ObjectLib
             {
                 new Ryzen5_5600X().GetType()
             };
-
-            //CPU Compatible check
-            if (CPU != null)
-            {
-                bool isCompatible = false;
-                foreach (Type type in CompatibleCPUs)
-                {
-                    if (type == CPU.GetType())
-                    {
-                        isCompatible = true;
-                        break;
-                    }
-                }
-                if (isCompatible)
-                {
-                    this.CPU = CPU;
-                }
-                else
-                {
-                    System.Windows.Forms.MessageBox.Show("CPU " + CPU.Name + " isn`t compatible with " + this.Socket + " motherboard socket. Cpu set`s by default to " + CompatibleCPUs[0].Name);
-                    this.CPU = new Ryzen5_5600X();
-                }
-            }
-            else
-            {
-                this.CPU = new Ryzen5_5600X();
-            }
+            
+            this.CPU = CPU;
 
             if (GPU != null)
                 this.GPU = GPU;
@@ -118,7 +140,42 @@ namespace ObjectLib
     }
     public class Aorus_Z370 : IMotherboard
     {
-        public ICPU CPU { get; set; } //CentralProcessingUnit
+        private ICPU cpu; //CentralProcessingUnit
+        public ICPU CPU
+        {
+            set
+            {
+                if (value != null && CompatibleCPUs.Length > 0)
+                {
+                    bool isCompatible = false;
+                    foreach (Type type in CompatibleCPUs)
+                    {
+                        if (type == value.GetType())
+                        {
+                            isCompatible = true;
+                            break;
+                        }
+                    }
+                    if (isCompatible)
+                    {
+                        this.cpu = value;
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("CPU " + value.Name + " isn`t compatible with " + this.Socket + " motherboard socket. Cpu set`s by default");
+                        this.cpu = new IntelCore_I3_6100();
+                    }
+                }
+                else
+                {
+                    this.cpu = new IntelCore_I3_6100();
+                }
+            }
+            get
+            {
+                return this.cpu;
+            }
+        }
         public IGPU GPU { get; set; } //GraphicProcessingUnit
         public Sockets Socket { get; private set; }
         public Type[] CompatibleCPUs { get; private set; }
@@ -133,32 +190,7 @@ namespace ObjectLib
                 new IntelCore_I5_9300H().GetType()
             };
 
-            //CPU Compatible check
-            if (CPU != null)
-            {
-                bool isCompatible = false;
-                foreach (Type type in CompatibleCPUs)
-                {
-                    if (type == CPU.GetType())
-                    {
-                        isCompatible = true;
-                        break;
-                    }
-                }
-                if (isCompatible)
-                {
-                    this.CPU = CPU;
-                }
-                else
-                {
-                    System.Windows.Forms.MessageBox.Show("CPU " + CPU.Name + " isn`t compatible with " + this.Socket + " motherboard socket. Cpu set`s by default to " + CompatibleCPUs[0].Name);
-                    this.CPU = new IntelCore_I3_6100();
-                }
-            }
-            else
-            {
-                this.CPU = new IntelCore_I3_6100();
-            }
+            this.CPU = CPU;
 
             if (GPU != null)
                 this.GPU = GPU;

@@ -57,6 +57,11 @@ namespace WindowsFormsApp1
 
         private void timer1_Tick(object sender, System.EventArgs e)
         {
+            try
+            {
+                BufferObject = new ObjectLib.Computer(BufferDesc);
+            }
+            catch { }
             this.TB_ObjectContext.Text = BufferObject.ToString();
         }
 

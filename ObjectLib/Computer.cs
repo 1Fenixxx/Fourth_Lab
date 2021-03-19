@@ -1,5 +1,4 @@
-﻿
-namespace ObjectLib
+﻿namespace ObjectLib
 {
     public class Computer
     {
@@ -11,10 +10,6 @@ namespace ObjectLib
             public double TotalPrice;
         }
         private DeviceDesc Description;
-        public DeviceDesc GetDesc()
-        {
-            return this.Description;
-        }
         public Computer()
         {
             this.Description = new DeviceDesc()
@@ -43,22 +38,18 @@ namespace ObjectLib
 
             return output;
         }
+        public DeviceDesc GetDesc()
+        { return this.Description;}
         public string GetTotalPriceString()
-        {
-            return "Price: " + this.Description.TotalPrice + "\r\n";
-        }
-        public string GetMotherboardTypeString()
-        {
-            return "MotherBoard: " + this.Description.Motherboard.GetType().Name + "\r\n";
-        }
+        { return "Price: " + this.Description.TotalPrice + "\r\n";}
+        public string GetMotherboardTypeString() 
+        { return "MotherBoard: " + this.Description.Motherboard.GetType().Name + "\r\n";}
         public string GetCPUTypeString()
-        {
-            return "CPU: " + this.Description.Motherboard.CPU.GetType().Name + "\r\n";
-        }
+        { return "CPU: " + this.Description.Motherboard.CPU.GetType().Name + "\r\n";}
         public string GetGPUTypeString()
-        {
-            return "GPU: " + this.Description.Motherboard.GPU.GetType().Name + "\r\n";
-        }
+        { return "GPU: " + this.Description.Motherboard.GPU.GetType().Name + "\r\n"; }
+        public string GetPowerSupplyTypeString() 
+        { return "Power Supply: " + this.Description.PS.GetType().Name + "\r\n"; }
         public string GetDrivesTypeString()
         {
             string buffer_1 = "\r\n\tCount: " + this.Description.Drives.Length + "\r\n";
@@ -67,10 +58,6 @@ namespace ObjectLib
                 buffer_1 += "\t" + drive.GetType().Name + "\r\n";
             }
             return "Drives: " + buffer_1;
-        }
-        public string GetPowerSupplyTypeString()
-        {
-            return "Power Supply: " + this.Description.PS.GetType().Name + "\r\n";
         }
         public double totalPrice()
         {

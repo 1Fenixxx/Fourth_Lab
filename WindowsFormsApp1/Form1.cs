@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -36,6 +34,7 @@ namespace WindowsFormsApp1
                 ComputerObjectBuffer.BufferObject = (ObjectLib.Computer)LB_Objects.SelectedItem;
             ObjectAddForm newWindow = new ObjectAddForm();
             this.LB_Objects.Items.RemoveAt(this.LB_Objects.Items.IndexOf(ComputerObjectBuffer.BufferObject));
+            TB_ParamData.Text = string.Empty;
             newWindow.ShowDialog();
             this.LB_Objects.Items.Add(ComputerObjectBuffer.BufferObject);
         }
@@ -43,12 +42,16 @@ namespace WindowsFormsApp1
         private void B_DeleteObject_Click(object sender, EventArgs e)
         {
             if (LB_Objects.SelectedItem != null)
+            {
                 this.LB_Objects.Items.RemoveAt(this.LB_Objects.Items.IndexOf(ComputerObjectBuffer.BufferObject));
+                TB_ParamData.Text = string.Empty;
+            }
         }
 
         private void B_ClearList_Click(object sender, EventArgs e)
         {
             this.LB_Objects.Items.Clear();
+            TB_ParamData.Text = string.Empty;
         }
 
         private void B_Export_Click(object sender, EventArgs e)
@@ -59,11 +62,11 @@ namespace WindowsFormsApp1
                 data += (comp) + "\n";
             }
 
-            if (!System.IO.Directory.Exists(".. /Exported"))
+            if (!System.IO.Directory.Exists("Exported"))
             {
-                System.IO.Directory.CreateDirectory(".. /Exported");
+                System.IO.Directory.CreateDirectory("Exported");
             }
-            System.IO.File.WriteAllText($@"../Exported/ExportedData.txt", data);
+            System.IO.File.WriteAllText($@"Exported/ExportedData.txt", data);
         }
     }
 }
